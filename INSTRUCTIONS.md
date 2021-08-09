@@ -29,33 +29,3 @@ SAMPLE OUTPUT
 Note: This output is not prescriptive, in fact we encourage you to do better. CLI - Display Results
 
 
-meeting 1 notes.
-how do we close the loop?
-walking skeleton
-tracer bullet - enough code to pretend it's working https://wiki.c2.com/?WalkingSkeleton
-testing
-
-step one. 
-Load data.
-take an existing file
-read the file
-parse the file
-
-2 things we can do: 
-
-1 load into memory and poke around
-2 only load some of the data <-- lets do this because it's scalable>
-
-start
-take users.json
-open the file
-this led to a discussion around OS exit codes and error handling
-the attempt to open the file led to a discussion around io and file processing, hex address
-pointers to the file location, how to actually open the file
-//fmt.Printf("%#v\n", file)
-//fmt.Printf(file.Name())
-search by id
-ask a question of each record (DO YOU MATCH?????)
-if they match output the record as it is
-
-
