@@ -12,15 +12,17 @@ func main() {
 	file, err := os.Open("users.json")
 
 	if err != nil {
-		fmt.Println("OH NO", err)
+		fmt.Println("There was some sort of problemo with opening the file", err)
 		os.Exit(1)
 	}
 
-	//fmt.Printf("%#v\n", file)
-	//fmt.Printf(file.Name())
+	fileContents, err := ioutil.ReadAll(file)
+	if err != nil {
+		fmt.Println("the file read failed", err)
+		os.Exit(1)
+	}
 
-	thingy, err := ioutil.ReadAll(file)
-	fmt.Println(thingy)
+	fmt.Println(string(fileContents))
 
 	defer file.Close()
 
