@@ -3,17 +3,19 @@ package main
 import (
 	"fmt"
 	"os"
-	// cd "github.com/ajean-zd/codeclub-challenge/configuredata"
+
+	cd "github.com/ajean-zd/codeclub-challenge/configuredata"
 )
 
 func main() {
 	fmt.Println("why hello and welcome to code club")
 
-	err, fileContents := cd.getFileContent("users.json")
+	fileContents, err := cd.GetFileContent("users.json")
 	if err != nil {
-		fmt.Println("nope nope nope", err)
+		fmt.Println("check error and start again", err)
 		os.Exit(1)
 	}
+
 	fmt.Println(string(fileContents))
 
 }

@@ -10,7 +10,7 @@ import (
 
 //get the data from the files and configure it for use
 
-func getFileContent(fileName string) ([]byte, error) {
+func GetFileContent(fileName string) ([]byte, error) {
 	file, err := os.Open(fileName)
 
 	if err != nil {
