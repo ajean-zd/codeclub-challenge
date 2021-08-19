@@ -2,30 +2,19 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
+	// cd "github.com/ajean-zd/codeclub-challenge/configuredata"
 )
 
 func main() {
 	fmt.Println("why hello and welcome to code club")
 
-	file, err := os.Open("users.json")
-
+	err, fileContents := cd.getFileContent("users.json")
 	if err != nil {
-		fmt.Println("There was some sort of problemo with opening the file", err)
+		fmt.Println("nope nope nope", err)
 		os.Exit(1)
 	}
-
-	fileContents, err := ioutil.ReadAll(file)
-	if err != nil {
-		fmt.Println("the file read failed", err)
-		os.Exit(1)
-	}
-
-	
 	fmt.Println(string(fileContents))
-
-	defer file.Close()
 
 }
 
