@@ -15,8 +15,10 @@ func main() {
 		fmt.Println("check error and start again", err)
 		os.Exit(1)
 	}
+	//fmt.Println(string(fileContents))
+	userlist, err := cd.GetUsers(fileContents)
 
-	fmt.Println(string(fileContents))
+	fmt.Println(userlist)
 
 }
 
