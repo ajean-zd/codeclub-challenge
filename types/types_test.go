@@ -1,4 +1,4 @@
-package configuredata
+package types
 
 import (
 	"testing"
@@ -8,7 +8,7 @@ import (
 
 func Test_GetFileContent_ReturnsContent(t *testing.T) {
 
-	fileName := "users.json"
+	fileName := "./users.json"
 	result, err := GetFileContent(fileName)
 
 	assert.NoError(t, err)
