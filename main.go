@@ -9,11 +9,11 @@ import (
 func main() {
 	fmt.Println("why hello and welcome to code club")
 
-	users := ty.PopulateUserData("users.json")
+	users := ty.PopulateUserData("./files/users.json")
 	fmt.Println(users[0])
-	tickets := ty.PopulateTicketData("tickets.json")
+	tickets := ty.PopulateTicketData("./files/tickets.json")
 	fmt.Println(tickets[0])
-	organizations := ty.PopulateOrgData("organizations.json")
+	organizations := ty.PopulateOrgData("./files/organizations.json")
 	fmt.Println(organizations[0])
 	// fileContents, err := ty.GetFileContent("users.json")
 	// if err != nil {
