@@ -73,6 +73,7 @@ func PopulateUserData(fileName string) []User {
 		os.Exit(1)
 	}
 	var users []User
+
 	json.Unmarshal([]byte(fileContents), &users)
 	return users
 }
