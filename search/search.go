@@ -7,12 +7,20 @@ import (
 )
 
 //return a simple query
-func ReturnQuery(id int) string {
+func ReturnQuery(search_term int, users []ty.User) (string, error) {
 
-	users := ty.PopulateTicketData("../files/users.json")
+	result := ""
 
-	searchID := 1
+	fmt.Println(users)
+	for _, user := range users {
+		fmt.Println(user.ID)
 
-	fmt.Println(users, searchID)
+	}
+
+	// }
+	// us := users
+	// fmt.Printf("%#v\n", us)
+
+	return result, nil
 
 }
