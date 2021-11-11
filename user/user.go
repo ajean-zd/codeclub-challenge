@@ -1,7 +1,7 @@
 package user
 
 import (
-	load "github.com/ajean-zd/codeclub-challenge/load"
+	format "github.com/ajean-zd/codeclub-challenge/format"
 )
 
 func menuWorkflow() {
@@ -13,7 +13,7 @@ func menuWorkflow() {
 	//exit if 4 selected]
 	//go get correct data to display based on selection
 	//it will return the the right format
-	data, _ := load.ReturnFormattedData(userSelectOne)
+	data, _ := format.ReturnFormattedData(userSelectOne)
 
 	//load some data to display
 	displayData(data)

@@ -1,13 +1,4 @@
-package types
-
-import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
-	"os"
-
-	"github.com/pkg/errors"
-)
+package load
 
 type User struct {
 	ID              int    `json:"_id"`
@@ -66,55 +57,55 @@ type Org struct {
 	TAGS           Tags
 }
 
-func PopulateUserData(fileName string) []User {
-	fileContents, err := GetFileContent(fileName)
-	if err != nil {
-		fmt.Println("check error and start again", err)
-		os.Exit(1)
-	}
-	var users []User
+// func PopulateUserData(fileName string) []User {
+// 	fileContents, err := GetFileContent(fileName)
+// 	if err != nil {
+// 		fmt.Println("check error and start again", err)
+// 		os.Exit(1)
+// 	}
+// 	var users []User
 
-	json.Unmarshal([]byte(fileContents), &users)
-	return users
-}
+// 	json.Unmarshal([]byte(fileContents), &users)
+// 	return users
+// }
 
-func PopulateTicketData(fileName string) []Ticket {
-	fileContents, err := GetFileContent(fileName)
-	if err != nil {
-		fmt.Println("check error and start again", err)
-		os.Exit(1)
-	}
-	var tickets []Ticket
-	json.Unmarshal([]byte(fileContents), &tickets)
-	return tickets
-}
+// func PopulateTicketData(fileName string) []Ticket {
+// 	fileContents, err := GetFileContent(fileName)
+// 	if err != nil {
+// 		fmt.Println("check error and start again", err)
+// 		os.Exit(1)
+// 	}
+// 	var tickets []Ticket
+// 	json.Unmarshal([]byte(fileContents), &tickets)
+// 	return tickets
+// }
 
-func PopulateOrgData(fileName string) []Org {
-	fileContents, err := GetFileContent(fileName)
-	if err != nil {
-		fmt.Println("check error and start again", err)
-		os.Exit(1)
-	}
-	var orgs []Org
-	json.Unmarshal([]byte(fileContents), &orgs)
-	return orgs
-}
+// func PopulateOrgData(fileName string) []Org {
+// 	fileContents, err := GetFileContent(fileName)
+// 	if err != nil {
+// 		fmt.Println("check error and start again", err)
+// 		os.Exit(1)
+// 	}
+// 	var orgs []Org
+// 	json.Unmarshal([]byte(fileContents), &orgs)
+// 	return orgs
+// }
 
-func GetFileContent(fileName string) ([]byte, error) {
-	file, err := os.Open(fileName)
-	if err != nil {
-		return nil, errors.Wrap(err, "File could not open")
-	}
-	defer file.Close()
+// func GetFileContent(fileName string) ([]byte, error) {
+// 	file, err := os.Open(fileName)
+// 	if err != nil {
+// 		return nil, errors.Wrap(err, "File could not open")
+// 	}
+// 	defer file.Close()
 
-	fileContents, err := ioutil.ReadAll(file)
-	if err != nil {
-		return nil, errors.Wrap(err, "File unable to be read")
-	}
-	//to get the binary output
-	//fmt.Printf("%#v\n", fleContents)
-	//to confirm what is in a string
-	fmt.Println(string(fileContents))
+// 	fileContents, err := ioutil.ReadAll(file)
+// 	if err != nil {
+// 		return nil, errors.Wrap(err, "File unable to be read")
+// 	}
+// 	//to get the binary output
+// 	//fmt.Printf("%#v\n", fleContents)
+// 	//to confirm what is in a string
+// 	fmt.Println(string(fileContents))
 
-	return fileContents, nil
-}
+// 	return fileContents, nil
+// }
